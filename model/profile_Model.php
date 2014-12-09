@@ -95,14 +95,7 @@
         return $ar1;
     }
 
-    public function newreview(){
-        $review_text = $_REQUEST['retext'];
-        $conid =  $_REQUEST['id'];
-        $rating =  $_REQUEST['rate'];
-
-
-        $new_arr = $this->model->insertandgetreview($conid, $review_text, $rating);
-    }
+    
 
 
     }

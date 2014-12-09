@@ -43,6 +43,32 @@ class profile extends Controller{
             $this->view->loadView(__CLASS__,__FUNCTION__);            
         }
 
+
+        public function newreview(){
+        $review_text = $_REQUEST['retext'];
+        $conid =  $_REQUEST['id'];
+        $rating =  $_REQUEST['rate'];
+
+        
+        $new_arr = $this->model->insertandgetreview($conid, $review_text, $rating);
+        <div style="margin: 5px 0px 10px 0px; background-color: #b4bece;">
+                    <div class="oneconcert" style="display: inline-block">
+                        <img src="/media/images/icon.png" height="25" width="25" alt="concertimage" style="float: left; margin: 15px 40px 15px 15px;" />
+
+                        <div style="width: 750px;margin-top:16px;">
+
+                            <div class="onebloack" style="margin-left: 15px; border:1px;">'.$val[14].'</div></br>
+                        </div>
+                        
+                    </div>
+                    <div style=" width:750px">
+                        <div class="oneblock" style="margin-left: 15px;">Created by: '.$val[11].'</div>
+                        <div class="oneblock" style="margin-left: 15px;">Posted on : '.$val[13].'</div>
+                        <div class="oneblock" style="margin-left: 15px;">Rating :  '.$val[12].'</div>
+                    </div>
+                </div>
+    }
+
         public function logout(){
             
             Session::destroy();
