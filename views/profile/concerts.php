@@ -71,7 +71,7 @@
                                                    <img src="/media/images/icon.png" height="42" width="42" alt="concertimage" style="float: left; margin: 15px 50px 15px 15px;" />
                                                    <div>
                                                        <div style="float: left; width:300px">
-                                                           <div class="onebloack" style="margin-left: 15px;">Concert Name :  <a href="/concerts/display/'.$val[0].'"> SAMPLE CONCERT</a></div>
+                                                           <div class="onebloack" style="margin-left: 15px;">Concert Name :  <a href="/profile/concert/'.$val[0].'"> SAMPLE CONCERT</a></div>
                                                            <div class="onebloack" style="margin-left: 15px;">Band Name :  <a href="/concerts/display/'.$val[1].'">'.$val[1].'</a></div>
                                                        </div>
                         
@@ -107,7 +107,7 @@
                                                    <img src="/media/images/icon.png" height="42" width="42" alt="concertimage" style="float: left; margin: 15px 50px 15px 15px;" />
                                                    <div>
                                                        <div style="float: left; width:300px">
-                                                           <div class="onebloack" style="margin-left: 15px;">Concert Name :  <a href="/concerts/display/'.$val[0].'"> SAMPLE CONCERT</a></div>
+                                                           <div class="onebloack" style="margin-left: 15px;">Concert Name :  <a href="/profile/concert/'.$val[0].'"> SAMPLE CONCERT</a></div>
                                                            <div class="onebloack" style="margin-left: 15px;">Band Name :  <a href="/concerts/display/'.$val[1].'">'.$val[1].'</a></div>
                                                        </div>
                         

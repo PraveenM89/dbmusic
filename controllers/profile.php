@@ -1,7 +1,37 @@
 <?php
+<<<<<<< HEAD
     class profile extends Controller{
             public function __construct(){
                 parent::__construct();
+=======
+class profile extends Controller{
+        public function __construct(){
+            parent::__construct();
+        }
+
+        public function init(){
+            session_start();
+            $newsarr=$this->model->concertsfeed($_SESSION['uname123']);
+           
+            $this->view->newsarray=$newsarr;
+            
+            $this->view->loadView(__CLASS__,__FUNCTION__);
+            
+        }
+
+        public function newuser(){
+            
+            $this->model->insertuser($_REQUEST['rname'],$_REQUEST['runame'],$_REQUEST['dob'],$_REQUEST['remail'],$_REQUEST['password'],                         $_REQUEST['rcity']);
+
+            $this->model->insertuser($_REQUEST['rname'],$_REQUEST['runame'],$_REQUEST['dob'],$_REQUEST['remail'],$_REQUEST['password'],$_REQUEST['rcity']);
+
+            $this->model->logreg($_REQUEST['runame']);
+
+
+            if (isset($_REQUEST['usertype'])){
+                
+             $this->model->insertartist($_REQUEST['runame'],$_REQUEST['band'],$_REQUEST['rurl']);
+>>>>>>> origin/master
             }
     
             public function init(){
@@ -82,6 +112,31 @@
     
     
     }
+<<<<<<< HEAD
+=======
+
+        public function logout(){
+            
+            Session::destroy();
+            header("Location: /index");
+        }
+         
+<<<<<<< HEAD
+        public function news(){
+            session_start();
+            $newsarr=$this->model->concertsfeed($_SESSION['uname123']);
+           
+            $this->view->newsarray=$newsarr;
+           $this->view->loadview(__CLASS__,__FUNCTION__);
+        }
+=======
+    
+>>>>>>> origin/master
+            
+        
+
+}
+>>>>>>> origin/master
 ?>
 
 

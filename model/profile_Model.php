@@ -21,11 +21,12 @@
         public function concertsfeed($runame){
     
             $concerts=mysql_query("select concert_id,source_uname,name,bname,vname,time,url,price,event_time,approval from concerts join follow on source_uname=follower join band using(bid) join venue using (vid) join user on source_uname=user.uname where follow.uname='$runame'",$this->conn);
+            $col=mysql_num_fields($concerts);
             $ar1=array();
             $i=0;
             while($ar= mysql_fetch_array($concerts)){
                     
-                    for($j=0;$j<=7;$j++){
+                    for($j=0;$j<=$concerts-1;$j++){
                         $ar1[$i][$j]=$ar[$j];
     
              }
@@ -95,9 +96,30 @@
         return $ar1;
     }
 
+<<<<<<< HEAD
+    public function insertandgetreview($runame,$conid,$rate,$reviewtext){
+        $date=new DateTime();
+        $ar= $date->format('Y-m-d H:i:s');
+        $query=mysql_query("insert into review (review_id,uname,concert_id,rating,post_time,review_text) values ('14','$uname','$conid','$rate','$ar','$reviewtext')",$this->conn);
+        $query1=mysql_query("select * from review where review_id='14'",$this->conn);
+        $ar1=array();
+            $i=0;
+            while($ar= mysql_fetch_array($query1)){
+                    for($j=0;$j<=14;$j++){
+                        $ar1[$i][$j]=$ar[$j];
+    
+             }
+             $i=$i+1;
+        }
+
+        return $ar1;
+
+    }
+=======
     
 
 
+>>>>>>> origin/master
     }
 ?>
 
