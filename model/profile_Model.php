@@ -78,6 +78,21 @@
         $ar= $date->format('Y-m-d H:i:s');
         $query=mysql_query("insert into user_log (uname,in_time,out_time) values ('$uname','$ar','0000-00-00 00:00:00')",$this->conn);
     }
+
+    public function conreview($conid){
+        $query=mysql_query("select concert_id,bname,bid,vname,source_uname,time,url,price,approval,event_time,uname,name,rating,post_time,review_text from concerts join review using(concert_id) join user using(uname) join band using(bid) join venue using(vid) where concert_id = '$conid' order by 'post_time' desc",$this->conn);
+        $ar1=array();
+            $i=0;
+            while($ar= mysql_fetch_array($query)){
+                    for($j=0;$j<=14;$j++){
+                        $ar1[$i][$j]=$ar[$j];
+    
+             }
+             $i=$i+1;
+        }
+        var_dump($ar1);
+        return $ar1;
+    }
     }
 ?>
 
