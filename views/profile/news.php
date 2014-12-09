@@ -1,14 +1,14 @@
 
 <?php
     session_start();
-    if(!Session::auth('uname123'))
+    if(!Session::auth())
          header("Location: /index");
     
-
-
+  
+    
 ?>
 <html>
-    
+
     <head>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
         <link href="/common/css/master.css" rel="stylesheet" type="text/css">
@@ -31,8 +31,8 @@
             <div class="wrapper">
                 <ul class="right">
                                             <!--<li><a href="/search" class="menu">Search</a></li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li><a href="/band" class="menu">Bands</a></li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li><a href="/concert" class="menu">Concerts</a></li>-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li><a href="/band" class="menu">Bands</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li><a href="/concert" class="menu">Concerts</a></li>-->
                     <li><a href="/profile/user/???????" class="menu">My Home</a></li>
                     <li><a href="/profile/logout" class="menu">Log Out</a></li>
                 </ul>
@@ -43,21 +43,25 @@
         <div class="body">
             <div class="leftpanel">
                 <ul>
-                    <li><a href="/profile/news" class="active">News</a></li>
+                    <li><a href="/profile">News</a></li>
                     <li><a href="/profile/posts">Posts</a></li>
                     <li><a href="/profile/reviews">Reviews</a></li>
-                    <li><a href="/profile/concerts">Concerts</a></li>
+                    <li><a href="/profile/concerts" class="active">Concerts</a></li>
                     <li><a href="/profile/bands">Bands</a></li>
                     <li><a href="/profile/network">Network</a></li>
                     <li><a href="/profile/lists">Lists</a></li>
                     <li><a href="/profile/search">Search</a></li>
                     <li><a href="/profile/settings">Settings</a></li>
+                    array(1) { [0]=> array(12) { [0]=> string(7) "c123458" [1]=> string(9) "praveen90" [2]=> string(7) "Praveen" [3]=> string(8) "rockstar" [4]=> string(17) "Washington Square" [5]=> string(19) "2014-11-24 13:16:35" [6]=> string(15) "www.concert.com" [7]=> string(3) "350" [8]=> string(19) "2014-12-20 04:00:09" [9]=> string(2) "na" [10]=> NULL [11]=> NULL } } array(1) { [0]=> array(12) { [0]=> string(7) "c123458" [1]=> string(9) "praveen90" [2]=> string(7) "Praveen" [3]=> string(8) "rockstar" [4]=> string(17) "Washington Square" [5]=> string(19) "2014-11-24 13:16:35" [6]=> string(15) "www.concert.com" [7]=> string(3) "350" [8]=> string(19) "2014-12-20 04:00:09" [9]=> string(2) "na" [10]=> NULL [11]=> NULL } }
+
+
+
                 </ul>
             </div>
             <div class="content">
                 <div id="concertcontent">
                     <div class="content-title">
-                    Recommended Concerts
+                     Concerts
                     </div>
                     <?php
                         foreach($this->newsarray as $val){
@@ -87,27 +91,9 @@
                                           ';}
                     ?>
 
-                    </div>
                 </div>
+                
 
-                <div class="content-title" style="margin-top: 40px;">Posts
-                </div>
-                <div style="margin: 5px 0px 10px 0px; background-color: #b4bece;">
-                    <div class="oneconcert" style="display: inline-block">
-                        <img src="/media/images/icon.png" height="42" width="42" alt="concertimage" style="float: left; margin: 15px 50px 15px 15px;" />
-
-                        <div style="width: 750px;">
-
-                            <div class="onebloack" style="margin-left: 15px; border:1px;">POST TEXT</div></br>
-                        </div>
-                        
-                    </div>
-                    <div style=" width:750px;text-align: right">
-                        <div class="oneblock" style="margin-left: 15px;">Created by:  SAMPLE USER</div>
-                        <div class="oneblock" style="margin-left: 15px;">Posted on :  SAMPLE TIME</div>
-                        
-                    </div>
-                </div>
 
 
             </div>
@@ -122,4 +108,4 @@
 
 
     </body>
-</html>
+</html>?>

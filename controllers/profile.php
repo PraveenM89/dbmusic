@@ -5,6 +5,10 @@ class profile extends Controller{
         }
 
         public function init(){
+            session_start();
+            $newsarr=$this->model->concertsfeed($_SESSION['uname123']);
+           
+            $this->view->newsarray=$newsarr;
             
             $this->view->loadView(__CLASS__,__FUNCTION__);
             
@@ -48,7 +52,13 @@ class profile extends Controller{
             header("Location: /index");
         }
          
-        
+        public function news(){
+            session_start();
+            $newsarr=$this->model->concertsfeed($_SESSION['uname123']);
+           
+            $this->view->newsarray=$newsarr;
+           $this->view->loadview(__CLASS__,__FUNCTION__);
+        }
             
         
 
