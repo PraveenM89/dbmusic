@@ -47,7 +47,7 @@
             <div class="content">
                 <div id="concertcontent">
                     <div class="content-title">
-                     Concerts
+                     Concert
                     </div>
                     <div class="oneconcert" style="margin: 5px 0px 10px 0px;background-color: #b4bece;">
                         <div style="padding: 10px 10px 10px 20px;">
@@ -77,9 +77,19 @@
 
                             <div class="reviewblock" style="display: none">
                                 <div class="reviewbox">
-                                    <textarea name="reviewtext" rows="4" cols="80" style="background-color: #fff;margin-left: 50px;">
+                                    <textarea id="reviewtext" rows="3" cols="80" style="background-color: #fff; padding:5px 5px 5px 5px;margin-left: 50px;">
 
                                     </textarea>
+                                </div>
+                                <div style="margin-left: 50px;">
+                                    <label for="rating">Rating</label>
+                                       <select id="rating" name="rating">
+                                           <option value="1">1</option>
+                                           <option value="2">2</option>
+                                           <option value="3">3</option>
+                                           <option value="4">4</option>
+                                           <option value="5">5</option>
+                                       </select> 
                                 </div>
                                 <div class="onebloack" style="margin-left: 50px;">
                                     <input type="button" style="width: 75px" value="submit" name="review-submit" id="review-submit">

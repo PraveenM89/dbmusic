@@ -11,6 +11,31 @@ $(document).ready(function () {
         }
 
     });
+
+    $("#review-submit").click(function () {
+        var hiddenid = $("#hiddenid").val();
+        var rtext = $("#reviewtext").val().trim();
+        var rating = $("#rating").val();
+
+        if (rtext == '') {
+            rtext = 'No review';
+        }
+
+        $.post('/profile/newreview', { name: uname, pass: pwd }, function (data) {
+            if (data == 0) {
+
+                $("#usernotexist").show("slow");
+            }
+            else {
+                location.href = "/profile";
+
+            }
+        });
+
+
+
+    });
+
 });
 
     
