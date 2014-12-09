@@ -81,6 +81,7 @@
     }
 
     public function conreview($conid){
+        //to populate a single concert
         $query=mysql_query("select concert_id,bname,bid,vname,source_uname,time,url,price,approval,event_time,uname,name,rating,post_time,review_text from concerts join review using(concert_id) join user using(uname) join band using(bid) join venue using(vid) where concert_id = '$conid' order by 'post_time' desc",$this->conn);
         $ar1=array();
             $i=0;
@@ -91,10 +92,11 @@
              }
              $i=$i+1;
         }
-        var_dump($ar1);
+        
         return $ar1;
     }
 
+<<<<<<< HEAD
     public function insertandgetreview($runame,$conid,$rate,$reviewtext){
         $date=new DateTime();
         $ar= $date->format('Y-m-d H:i:s');
@@ -113,6 +115,11 @@
         return $ar1;
 
     }
+=======
+    
+
+
+>>>>>>> origin/master
     }
 ?>
 
