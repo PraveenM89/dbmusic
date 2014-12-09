@@ -21,15 +21,8 @@ $(document).ready(function () {
             rtext = 'No review';
         }
 
-        $.post('/profile/newreview', { name: uname, pass: pwd }, function (data) {
-            if (data == 0) {
-
-                $("#usernotexist").show("slow");
-            }
-            else {
-                location.href = "/profile";
-
-            }
+        $.post('/profile/newreview', { id: hiddenid, retext: rtext, rate: rating }, function (data) {
+            
         });
 
 

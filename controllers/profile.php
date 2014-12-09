@@ -12,7 +12,7 @@ class profile extends Controller{
 
         public function newuser(){
             
-            $this->model->insertuser($_REQUEST['rname'],$_REQUEST['runame'],$_REQUEST['dob'],$_REQUEST['remail'],$_REQUEST['password'],$_REQUEST['rcity']);
+            $this->model->insertuser($_REQUEST['rname'],$_REQUEST['runame'],$_REQUEST['dob'],$_REQUEST['remail'],$_REQUEST['password'],                         $_REQUEST['rcity']);
 
             $this->model->insertuser($_REQUEST['rname'],$_REQUEST['runame'],$_REQUEST['dob'],$_REQUEST['remail'],$_REQUEST['password'],$_REQUEST['rcity']);
 
@@ -38,7 +38,8 @@ class profile extends Controller{
         }
 
         public function concert($concertid){
-            $this->view->conid=$concertid;
+            $arrdump = $this->model->conreview($concertid);
+            $this->view->condump = $arrdump;
             $this->view->loadView(__CLASS__,__FUNCTION__);            
         }
 
@@ -48,7 +49,7 @@ class profile extends Controller{
             header("Location: /index");
         }
          
-        
+    
             
         
 

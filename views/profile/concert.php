@@ -20,6 +20,7 @@
         <div class="header">
             <div class="wrapper">
                 <ul class="right">
+                    
                                             <!--<li><a href="/search" class="menu">Search</a></li>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <li><a href="/band" class="menu">Bands</a></li>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <li><a href="/concert" class="menu">Concerts</a></li>-->
@@ -45,6 +46,11 @@
                 </ul>
             </div>
             <div class="content">
+                
+                <input id="hiddenid" type="text" value="<?php echo $this->condump[0][0];?>" style="display: None">
+                <?php
+                     
+                              echo '
                 <div id="concertcontent">
                     <div class="content-title">
                      Concert
@@ -54,21 +60,21 @@
                             <img src="/media/images/icon.png" height="42" width="42" alt="concertimage" style="float: left; margin: 15px 50px 15px 15px;" />
                             <div>
                                 <div style="float: left; width:300px">
-                                    <div class="onebloack" style="margin-left: 15px;">Concert Name :  <a href=#>SAMPLE CONCERT</a></div>
-                                    <div class="onebloack" style="margin-left: 15px;">Band Name :  SAMPLE BAND</div>
+                                    <div class="onebloack" style="margin-left: 15px;">Concert Name :  <a href="/profile/concert/'.$this->condump[0][0].'"> SAMPLE CONCERT</a></div>
+                                    <div class="onebloack" style="margin-left: 15px;">Band Name :  <a href="/profile/band/'.$this->condump[0][2].'">'.$this->condump[0][1].'</a></div>
                                 </div>
 
-                                <div class="onebloack" style="margin-left: 15px;">Venue :  SAMPLE VENUE</div>
-                                <div class="onebloack" style="margin-left: 15px;">Event time :  SAMPLE TIME</div></br>
-                                <div class="onebloack" style="margin-left: 15px;">Created On :  SAMPLE TIME</div></br>
-                                <div class="onebloack" style="margin-left: 15px;margin-bottom: 1px;">Url :  SAMPLE URL
+                                <div class="onebloack" style="margin-left: 15px;">Venue :  '.$this->condump[0][3].'</div>
+                                <div class="onebloack" style="margin-left: 15px;">Event time :  '.$this->condump[0][9].'</div></br>
+                                <div class="onebloack" style="margin-left: 15px;">Created On :  '.$this->condump[0][5].'</div></br>
+                                <div class="onebloack" style="margin-left: 15px;margin-bottom: 1px;">Url :  '.$this->condump[0][6].'
                                 </div>
 
                             </div>
 
-                            <div class="onebloack" style="margin-left: 15px; margin-top: 5px">Ticket Amount :  SAMPLE BAND</div>
-                            <div class="onebloack" style="margin-left: 15px;">Created by :  SAMPLE BAND</div>
-                            <div class="onebloack" style="margin-left: 15px;">Approved :  Yes</div>
+                            <div class="onebloack" style="margin-left: 15px; margin-top: 5px">Ticket Amount :  '.$this->condump[0][7].'</div>
+                            <div class="onebloack" style="margin-left: 15px;">Created by :  '.$this->condump[0][4].'</div>
+                            <div class="onebloack" style="margin-left: 15px;">Approved :  '; if($this->condump[0][8]=='na')echo 'No'; else echo 'Yes'; echo'</div>
                             <div id="reviewclick" style="margin-left: 15px;">
                                 <a href="#">
  Write a review</a>
@@ -97,27 +103,34 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>';
+
+
+                ?>
+                
 
                 <div class="content-title" style="margin-top: 40px;">Reviews
                 </div>
+                <?php 
+                   foreach($this->condump as $val){
+                        echo '
                 <div style="margin: 5px 0px 10px 0px; background-color: #b4bece;">
                     <div class="oneconcert" style="display: inline-block">
-                        <img src="/media/images/icon.png" height="42" width="42" alt="concertimage" style="float: left; margin: 15px 50px 15px 15px;" />
+                        <img src="/media/images/icon.png" height="25" width="25" alt="concertimage" style="float: left; margin: 15px 40px 15px 15px;" />
 
-                        <div style="width: 750px;">
+                        <div style="width: 750px;margin-top:16px;">
 
-                            <div class="onebloack" style="margin-left: 15px; border:1px;">REVIEW TEXT</div></br>
+                            <div class="onebloack" style="margin-left: 15px; border:1px;">'.$val[14].'</div></br>
                         </div>
                         
                     </div>
                     <div style=" width:750px">
-                        <div class="oneblock" style="margin-left: 15px;">Created by:  SAMPLE USER</div>
-                        <div class="oneblock" style="margin-left: 15px;">Posted on :  SAMPLE TIME</div>
-                        <div class="oneblock" style="margin-left: 15px;">Rating :  SAMPLE RATING</div>
+                        <div class="oneblock" style="margin-left: 15px;">Created by: '.$val[11].'</div>
+                        <div class="oneblock" style="margin-left: 15px;">Posted on : '.$val[13].'</div>
+                        <div class="oneblock" style="margin-left: 15px;">Rating :  '.$val[12].'</div>
                     </div>
-                </div>
-
+                </div>';}
+                ?>
 
             </div>
 

@@ -80,6 +80,7 @@
     }
 
     public function conreview($conid){
+        //to populate a single concert
         $query=mysql_query("select concert_id,bname,bid,vname,source_uname,time,url,price,approval,event_time,uname,name,rating,post_time,review_text from concerts join review using(concert_id) join user using(uname) join band using(bid) join venue using(vid) where concert_id = '$conid' order by 'post_time' desc",$this->conn);
         $ar1=array();
             $i=0;
@@ -90,9 +91,20 @@
              }
              $i=$i+1;
         }
-        var_dump($ar1);
+        
         return $ar1;
     }
+
+    public function newreview(){
+        $review_text = $_REQUEST['retext'];
+        $conid =  $_REQUEST['id'];
+        $rating =  $_REQUEST['rate'];
+
+
+        $new_arr = $this->model->insertandgetreview($conid, $review_text, $rating);
+    }
+
+
     }
 ?>
 
